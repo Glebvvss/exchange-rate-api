@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  ex_rate_app:
+    container_name: ex_rate_app
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    ports:
+      - "8080:8080"
+    links:
+      - ex_rate_mysql
+    env_file:
+      - .env
+
+  ex_rate_mysql:
+    hostname: ex_rate_mysql
+    container_name: ex_rate_mysql
+    image: mysql/mysql-server:5.7.38
+    command: mysqld --user=root --verbose
+    environment:
+      - MYSQL_DATABASE=rates
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=supersecret
+      - MYSQL_ROOT_HOST=%

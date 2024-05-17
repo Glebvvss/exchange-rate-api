@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+  	<style type="text/css">
+  	  .table {
+  	    width: 100%;
+  	    border: none;
+  	    border-collapse: collapse;
+  	    border-spacing: 0;
+  	    padding: 0;
+  	  }
+  	
+  	  .content {
+  	    background: #dbdbdb;
+  	    padding: 20px;
+  	    border-radius: 20px;
+  	    text-align: center;
+  	  }
+  	</style>
+  	<meta http-equiv="Content-Type" content="text/html charset=UTF-8"/>
+  </head>
+  <body>
+  <table class="table">
+  	<tbody>
+  	  <table class="table">
+        <tr>
+          <td class="content">
+            Actual currency rates USD/UAH: {{.Rate}}
+          </td>
+        </tr>
+      </table>
+  	</tbody>
+  </table>
+  </body>
+</html>
