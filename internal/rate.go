@@ -37,7 +37,7 @@ func GetUsdRate() (float32, error) {
 
 	result, convErr := strconv.ParseFloat(usdJsonRate.Buy, 32)
 	if convErr != nil {
-		return 0, err
+		return 0, convErr
 	}
 
 	return float32(result), nil
